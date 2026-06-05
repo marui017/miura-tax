@@ -61,6 +61,7 @@ body {
   color: #3a4656;
   line-height: 1.8;
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 h1,
@@ -777,6 +778,9 @@ h6 {
   .p-hero {
     min-height: auto;
     padding: 0 0 48px;
+  }
+  .p-hero::before, .p-hero::after {
+    display: none;
   }
 }
 .p-hero__inner {
@@ -2856,5 +2860,3 @@ h6 {
     display: none !important;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

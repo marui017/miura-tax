@@ -44,6 +44,11 @@
   @include sp {
     min-height: auto;
     padding: 0 0 48px;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 
   &__inner {
