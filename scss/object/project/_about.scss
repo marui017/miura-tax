@@ -1,0 +1,280 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+// ============================================================
+// Profile
+// ============================================================
+.p-about-profile {
+  @include section-padding;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 64px;
+    align-items: center;
+
+    @include tab {
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__photo {
+    @include sp {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  }
+
+  &__photo-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 75% top;
+    border-radius: 8px;
+    display: block;
+  }
+
+  &__name {
+    font-family: $font-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: $color-navy;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+
+    @include sp {
+      font-size: 28px;
+      gap: 12px;
+    }
+  }
+
+  &__name-en {
+    font-family: $font-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: $color-black;
+    letter-spacing: 0.08em;
+  }
+
+  &__role {
+    font-size: 14px;
+    color: $color-blue;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 2;
+    color: $color-black;
+    margin-bottom: 20px;
+  }
+
+  &__sign {
+    font-family: $font-serif;
+    font-size: 16px;
+    color: $color-navy;
+    margin-top: 32px;
+  }
+}
+
+// ============================================================
+// Message
+// ============================================================
+.p-about-message {
+  @include section-padding;
+  background: $color-navy;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      rgba($color-white, 0.08) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 500;
+    color: $color-white;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin-bottom: 36px;
+  }
+
+  &__body {
+    text-align: left;
+
+    p {
+      font-size: 16px;
+      line-height: 2.1;
+      color: rgba($color-white, 0.8);
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include sp {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Career
+// ============================================================
+.p-about-career {
+  @include section-padding;
+  background: $color-gray-02;
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__block-title {
+    font-family: $font-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-navy;
+    letter-spacing: 0.04em;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid $color-blue;
+  }
+
+  &__timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__timeline-item {
+    display: flex;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__year {
+    flex-shrink: 0;
+    font-family: $font-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-blue;
+    width: 56px;
+  }
+
+  &__event {
+    font-size: 14px;
+    line-height: 1.7;
+    color: $color-black;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: $color-black;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $color-blue;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Office Info
+// ============================================================
+.p-about-office {
+  @include section-padding;
+
+  &__table {
+    max-width: 760px;
+    margin: 0 auto;
+    border-top: 1px solid $color-border;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    padding: 24px 8px;
+    border-bottom: 1px solid $color-border;
+    margin: 0;
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 6px;
+      padding: 18px 4px;
+    }
+  }
+
+  &__term {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-navy;
+    letter-spacing: 0.04em;
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: $color-black;
+    margin: 0;
+  }
+}

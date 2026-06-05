@@ -1,0 +1,30 @@
+@use '../../foundation/variable' as *;
+@use '../../foundation/mixin' as *;
+
+// テキスト揃え
+.u-text-center { text-align: center; }
+.u-text-left   { text-align: left; }
+.u-text-right  { text-align: right; }
+
+// マージン上
+.u-mt-sm { margin-top: 16px; }
+.u-mt-md { margin-top: 32px; }
+.u-mt-lg { margin-top: 64px; }
+
+// マージン下
+.u-mb-sm { margin-bottom: 16px; }
+.u-mb-md { margin-bottom: 32px; }
+.u-mb-lg { margin-bottom: 64px; }
+
+// 表示切替
+.u-sp-only {
+  @media screen and (min-width: #{$bp-sp + 1}) {
+    display: none !important;
+  }
+}
+
+.u-pc-only {
+  @include sp {
+    display: none !important;
+  }
+}

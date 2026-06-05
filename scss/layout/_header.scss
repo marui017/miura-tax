@@ -1,0 +1,140 @@
+@use "../foundation/variable" as *;
+@use "../foundation/mixin" as *;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: $color-white;
+  box-shadow: 0 2px 16px rgba($color-black, 0.08);
+
+  &__inner {
+    @include flex-between;
+    padding: 0 20px;
+    height: 72px;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    font-family: $font-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: $color-navy;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  &__nav {
+    @include sp {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 100%;
+      background: $color-white;
+      padding: 24px $inner-padding 32px;
+      box-shadow: 0 4px 16px rgba($color-black, 0.1);
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform 0.3s,
+        opacity 0.3s;
+
+      &.is-open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a:not(.p-cta__btn) {
+      position: relative;
+      font-size: 16px;
+      font-weight: 500;
+      color: $color-black;
+      text-decoration: none;
+      transition: color 0.25s;
+
+      &:hover {
+        color: $color-blue;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    @include sp {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+
+      li {
+        width: 100%;
+        border-bottom: 1px solid $color-gray-02;
+      }
+
+      a:not(.p-cta__btn) {
+        display: block;
+        padding: 14px 0;
+        font-size: 16px;
+      }
+
+      .p-cta__btn {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: $color-black;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    &.is-open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &.is-open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.is-open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    @include sp {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-faq {
+  @include section-padding;
+  background: $color-white;
+
+  &__category {
+    margin-bottom: 56px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include sp {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__category-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: $font-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: $color-navy;
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 4px;
+      height: 22px;
+      background: $color-blue;
+      border-radius: 2px;
+    }
+
+    @include sp {
+      font-size: 19px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    background: $color-gray-02;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__question {
+    button {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      padding: 24px 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: $font-sans;
+      font-size: 16px;
+      font-weight: 500;
+      color: $color-black;
+      line-height: 1.5;
+
+      @include sp {
+        padding: 20px 20px;
+        gap: 14px;
+        font-size: 16px;
+      }
+
+      &[aria-expanded="true"] .p-faq__q-badge {
+        background: $color-navy;
+        color: $color-white;
+        border-color: $color-navy;
+      }
+
+      &[aria-expanded="true"] .p-faq__toggle {
+        background: $color-navy;
+        border-color: $color-navy;
+
+        &::before {
+          background: $color-white;
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(0deg);
+          background: $color-white;
+        }
+      }
+    }
+  }
+
+  &__q-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid $color-navy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-navy;
+    transition:
+      background 0.3s,
+      color 0.3s,
+      border-color 0.3s;
+
+    @include sp {
+      width: 34px;
+      height: 34px;
+      font-size: 13px;
+    }
+  }
+
+  &__toggle {
+    flex-shrink: 0;
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid rgba($color-navy, 0.3);
+    position: relative;
+    transition:
+      background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: $color-navy;
+      border-radius: 2px;
+      transition:
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &::before {
+      width: 12px;
+      height: 1.5px;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      width: 12px;
+      height: 1.5px;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    @include sp {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__answer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+
+    &.is-open {
+      max-height: 600px;
+    }
+  }
+
+  &__answer-inner {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 28px 28px;
+    border-top: 1px solid rgba($color-navy, 0.08);
+
+    @include sp {
+      padding: 16px 20px 24px;
+      gap: 14px;
+    }
+  }
+
+  &__a-badge {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid $color-orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-orange;
+
+    @include sp {
+      width: 34px;
+      height: 34px;
+      font-size: 13px;
+    }
+  }
+
+  &__answer-text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: $color-black;
+    padding-top: 8px;
+
+    strong {
+      display: block;
+      font-weight: 600;
+      color: $color-black;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: $color-orange;
+      text-decoration: underline;
+    }
+  }
+
+  &__more {
+    text-align: center;
+  }
+}

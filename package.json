@@ -1,0 +1,12 @@
+{
+  "name": "web-starter",
+  "version": "1.0.0",
+  "description": "Web制作スターターキット（FLOCSS）",
+  "scripts": {
+    "sass:watch": "sass --watch scss/style.scss css/style.css --style expanded",
+    "sass:build": "sass scss/style.scss css/style.css --style compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

@@ -1,0 +1,42 @@
+@use "variable" as *;
+@use "mixin" as *;
+
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sans;
+  color: $color-black;
+  line-height: $line-height-base;
+  background: $color-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-serif;
+  line-height: 1.4;
+}
+
+.inner {
+  @include inner;
+}
+
+// スクロールアニメーション
+.js-fadeIn {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

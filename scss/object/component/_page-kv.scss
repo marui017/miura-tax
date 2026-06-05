@@ -1,0 +1,88 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-page-kv {
+  position: relative;
+  background: $color-navy;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 20px 64px;
+
+  @include sp {
+    padding: 56px 20px 48px;
+  }
+
+  &__breadcrumb {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+
+    ol {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      color: rgba($color-white, 0.45);
+
+      &:not(:last-child)::after {
+        content: "/";
+        margin: 0 8px;
+        color: rgba($color-white, 0.25);
+      }
+
+      &:last-child {
+        color: rgba($color-white, 0.6);
+      }
+    }
+
+    a {
+      color: rgba($color-white, 0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__content {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: $color-white;
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+    margin-bottom: 28px;
+
+    @include sp {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__lead {
+    font-size: 14px;
+    line-height: 2;
+    color: rgba($color-white, 0.6);
+    text-align: center;
+
+    @include sp {
+      font-size: 13px;
+    }
+  }
+}

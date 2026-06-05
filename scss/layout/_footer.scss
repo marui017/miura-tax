@@ -1,0 +1,92 @@
+@use "../foundation/variable" as *;
+@use "../foundation/mixin" as *;
+
+.l-footer {
+  background: $color-navy-dark;
+  color: $color-white;
+  padding: 64px 0 32px;
+
+  &__inner {
+    max-width: $inner-width;
+    margin: 0 auto;
+    padding: 0 $inner-padding;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 64px;
+    padding-bottom: 56px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba($color-white, 0.1);
+
+    @include tab {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @include sp {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__logo {
+    font-family: $font-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: $color-white;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+
+  &__address {
+    font-size: 13px;
+    line-height: 2.1;
+    color: rgba($color-white, 0.55);
+    font-style: normal;
+  }
+
+  &__nav-title,
+  &__contact-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba($color-white, 0.45);
+    margin-bottom: 20px;
+  }
+
+  &__nav-list,
+  &__contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    a:not(.p-cta__btn) {
+      font-size: 14px;
+      color: rgba($color-white, 0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+
+    .p-cta__btn {
+      align-self: flex-start;
+    }
+  }
+
+  &__copy {
+    text-align: center;
+
+    small {
+      font-size: 12px;
+      color: rgba($color-white, 0.35);
+    }
+  }
+}

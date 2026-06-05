@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="三浦税理士事務所へのお問い合わせ・無料相談のお申し込みはこちらから。確定申告代行・税務顧問契約など、お気軽にご連絡ください。"
+    />
+    <title>お問い合わせ | 三浦税理士事務所</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- =============================================
+      Header
+    ============================================= -->
+    <header class="l-header">
+      <div class="l-header__inner">
+        <a href="index.html" class="l-header__logo">三浦税理士事務所</a>
+        <nav class="l-header__nav">
+          <ul class="l-header__nav-list">
+            <li><a href="service.html">サービス</a></li>
+            <li><a href="price.html">料金</a></li>
+            <li><a href="faq.html">よくある質問</a></li>
+            <li><a href="about.html">所長紹介</a></li>
+            <li>
+              <a
+                href="contact.html"
+                class="p-cta__btn p-cta__btn--primary p-cta__btn--sm"
+                aria-current="page"
+                ><span class="p-cta__btn-main">無料相談はこちら</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button class="l-header__hamburger" type="button" aria-label="メニュー">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="l-main">
+      <!-- =============================================
+        Page KV
+      ============================================= -->
+      <section class="p-page-kv">
+        <nav class="p-page-kv__breadcrumb" aria-label="パンくずリスト">
+          <ol>
+            <li><a href="index.html">ホーム</a></li>
+            <li>お問い合わせ</li>
+          </ol>
+        </nav>
+        <div class="p-page-kv__content">
+          <h1 class="p-page-kv__title">お問い合わせ</h1>
+          <p class="p-page-kv__lead">初回相談は無料です。「依頼するか迷っている」「料金感だけ知りたい」——そんな段階でも、お気軽にご連絡ください。通常2営業日以内にご返信いたします。</p>
+        </div>
+      </section>
+
+      <!-- =============================================
+        Contact
+      ============================================= -->
+      <section class="p-contact">
+        <div class="l-inner">
+          <div class="p-contact__inner">
+
+            <!-- フォーム -->
+            <div class="p-contact__form js-fadeIn">
+              <form class="c-form" action="#" method="post">
+                <div class="c-form__group">
+                  <label class="c-form__label" for="name">
+                    お名前<span class="c-form__required">必須</span>
+                  </label>
+                  <input
+                    class="c-form__input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="山田 太郎"
+                    required
+                  />
+                </div>
+
+                <div class="c-form__group">
+                  <label class="c-form__label" for="email">
+                    メールアドレス<span class="c-form__required">必須</span>
+                  </label>
+                  <input
+                    class="c-form__input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@mail.com"
+                    required
+                  />
+                </div>
+
+                <div class="c-form__group">
+                  <label class="c-form__label" for="tel">電話番号</label>
+                  <input
+                    class="c-form__input"
+                    type="tel"
+                    id="tel"
+                    name="tel"
+                    placeholder="090-0000-0000"
+                  />
+                </div>
+
+                <div class="c-form__group">
+                  <label class="c-form__label" for="subject">
+                    ご相談内容<span class="c-form__required">必須</span>
+                  </label>
+                  <div class="c-form__select-wrap">
+                    <select class="c-form__select" id="subject" name="subject" required>
+                      <option value="">選択してください</option>
+                      <option value="tax-return">確定申告代行について</option>
+                      <option value="bookkeeping">記帳代行について</option>
+                      <option value="advisory">税務顧問契約について</option>
+                      <option value="other">その他・料金の相談</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="c-form__group">
+                  <label class="c-form__label" for="message">
+                    お問い合わせ内容<span class="c-form__required">必須</span>
+                  </label>
+                  <textarea
+                    class="c-form__textarea"
+                    id="message"
+                    name="message"
+                    rows="7"
+                    placeholder="ご相談内容をご記入ください。現在のご状況（開業時期・業種・記帳状況など）をお書きいただくと、よりスムーズにご案内できます。"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="c-form__check">
+                  <input type="checkbox" id="privacy" name="privacy" required />
+                  <label for="privacy">
+                    <a href="#">プライバシーポリシー</a>に同意の上、送信します。
+                  </label>
+                </div>
+
+                <div class="c-form__actions">
+                  <button type="submit" class="p-cta__btn p-cta__btn--primary">
+                    <span class="p-cta__btn-main">この内容で送信する</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- 連絡先情報 -->
+            <aside class="p-contact__info js-fadeIn">
+              <div class="p-contact__info-block">
+                <p class="p-contact__info-label">お電話でのお問い合わせ</p>
+                <a href="tel:0300000000" class="p-contact__info-tel">03-0000-0000</a>
+                <p class="p-contact__info-note">平日 9:00 – 18:00（土日祝休）</p>
+              </div>
+              <div class="p-contact__info-block">
+                <p class="p-contact__info-label">メールでのお問い合わせ</p>
+                <a href="mailto:info@example.com" class="p-contact__info-mail">info@example.com</a>
+                <p class="p-contact__info-note">24時間受付・2営業日以内に返信</p>
+              </div>
+              <div class="p-contact__info-block">
+                <p class="p-contact__info-label">所在地</p>
+                <address class="p-contact__info-address">
+                  〒164-0001<br />
+                  東京都中野区中野X-XX-XX<br />
+                  中野ビル3F
+                </address>
+              </div>
+              <div class="p-contact__info-faq">
+                <p class="p-contact__info-faq-text">
+                  ご相談前に、よくある質問もご覧いただけます。
+                </p>
+                <a href="faq.html" class="c-btn c-btn--text">よくある質問を見る<span class="c-btn__arrow">→</span></a>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =============================================
+      Footer
+    ============================================= -->
+    <footer class="l-footer">
+      <div class="l-footer__inner">
+        <div class="l-footer__body">
+          <div class="l-footer__brand">
+            <p class="l-footer__logo">三浦税理士事務所</p>
+            <address class="l-footer__address">
+              〒164-0001<br />
+              東京都中野区中野X-XX-XX 中野ビル3F<br />
+              TEL: 03-0000-0000<br />
+              営業時間：平日 9:00 – 18:00（土日祝休）
+            </address>
+          </div>
+          <nav class="l-footer__nav">
+            <ul class="l-footer__nav-list">
+              <li><a href="index.html">ホーム</a></li>
+              <li><a href="service.html">サービス</a></li>
+              <li><a href="price.html">料金</a></li>
+              <li><a href="faq.html">よくある質問</a></li>
+              <li><a href="about.html">所長紹介</a></li>
+              <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+          </nav>
+          <div class="l-footer__contact">
+            <p class="l-footer__contact-title">CONTACT</p>
+            <ul class="l-footer__contact-list">
+              <li>
+                <a
+                  href="contact.html"
+                  class="p-cta__btn p-cta__btn--primary p-cta__btn--sm"
+                  ><span class="p-cta__btn-main">無料相談を申し込む</span></a
+                >
+              </li>
+              <li><a href="mailto:info@example.com">info@example.com</a></li>
+              <li><a href="tel:0300000000">03-0000-0000</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="l-footer__copy">
+          <small
+            >&copy; 2026 Miura Tax Accountant Office. All Rights
+            Reserved.</small
+          >
+        </p>
+      </div>
+    </footer>
+
+    <button class="c-totop js-totop" type="button" aria-label="トップへ戻る">
+      <span class="c-totop__arrow" aria-hidden="true"></span>
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

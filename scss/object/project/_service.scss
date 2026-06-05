@@ -1,0 +1,296 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+// ============================================================
+// Service Intro
+// ============================================================
+.p-service-intro {
+  @include section-padding;
+
+  &__nav {
+    display: flex;
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+
+  &__nav-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 32px;
+    border-left: 1px solid rgba($color-black, 0.15);
+    text-decoration: none;
+    color: $color-navy;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: color 0.25s;
+
+    &:last-child {
+      border-right: 1px solid rgba($color-black, 0.15);
+    }
+
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid $color-blue;
+      border-bottom: 2px solid $color-blue;
+      transform: rotate(45deg) translateY(-2px);
+      transition: border-color 0.25s;
+    }
+
+    &:hover {
+      color: $color-blue;
+    }
+
+    @include sp {
+      border-left: none;
+      border-top: 1px solid rgba($color-black, 0.15);
+      padding: 16px 20px;
+
+      &:last-child {
+        border-right: none;
+        border-bottom: 1px solid rgba($color-black, 0.15);
+      }
+    }
+  }
+
+  &__nav-num,
+  &__nav-en {
+    display: none;
+  }
+}
+
+// ============================================================
+// Service Detail
+// ============================================================
+.p-service-detail {
+  @include section-padding;
+
+  &__item {
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    padding: 56px;
+    margin-bottom: 32px;
+    scroll-margin-top: 100px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include sp {
+      padding: 32px 24px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid $color-border;
+
+    @include sp {
+      gap: 16px;
+    }
+  }
+
+  &__num {
+    flex-shrink: 0;
+    font-family: $font-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: rgba($color-blue, 0.25);
+    line-height: 1;
+
+    @include sp {
+      font-size: 40px;
+    }
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: $color-navy;
+    letter-spacing: 0.04em;
+
+    @include sp {
+      font-size: 24px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 48px;
+
+    @include tab {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__lead {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: $color-navy;
+    margin-bottom: 20px;
+
+    @include sp {
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 2;
+    color: $color-black;
+    margin-bottom: 32px;
+  }
+
+  &__recommend-label {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: $color-black;
+    margin-bottom: 14px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2px;
+      height: 8px;
+      background: rgba($color-blue, 0.25);
+      z-index: -1;
+    }
+  }
+
+  &__recommend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: $color-black;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $color-blue;
+      }
+    }
+  }
+
+  &__aside {
+    background: $color-gray-02;
+    border-radius: 8px;
+    padding: 32px;
+
+    @include sp {
+      padding: 24px;
+    }
+  }
+
+  &__included-label {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: $color-black;
+    margin-bottom: 16px;
+  }
+
+  &__included {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: $color-black;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $color-blue;
+      }
+    }
+  }
+
+  &__price {
+    text-align: center;
+    padding: 20px 0 24px;
+    margin-bottom: 24px;
+  }
+
+  &__price-period {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: $color-black;
+    margin-bottom: 6px;
+  }
+
+  &__price-amount {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: $color-navy;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  &__price-tilde {
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  &__price-note {
+    display: block;
+    font-size: 14px;
+    color: $color-black;
+  }
+
+  &__btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}

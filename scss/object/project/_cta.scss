@@ -1,0 +1,147 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+// ==========================================================================
+// CTA
+// ==========================================================================
+.p-cta {
+  @include section-padding;
+  background: $color-navy;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      rgba($color-white, 0.1) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    color: $color-white;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    white-space: nowrap;
+
+    @include sp {
+      white-space: normal;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba($color-white, 0.75);
+    margin-bottom: 40px;
+
+    @include sp {
+      font-size: 14px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  &__tel {
+    font-size: 14px;
+    color: rgba($color-white, 0.55);
+    letter-spacing: 0.04em;
+  }
+}
+
+// ==========================================================================
+// CTA Button (reusable / sub あり・なし両対応)
+// ==========================================================================
+.p-cta__btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 48px;
+  border-radius: 9999px;
+  text-decoration: none;
+  min-width: 260px;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+
+  &:hover {
+    background: $color-white;
+    border-color: $color-blue;
+    color: $color-blue;
+  }
+
+  &--primary {
+    background: $color-blue;
+    color: $color-white;
+    border: 2px solid $color-blue;
+  }
+
+  &--outline {
+    background: transparent;
+    color: $color-navy;
+    border: 2px solid rgba($color-navy, 0.4);
+  }
+
+  &--outline-light {
+    background: $color-white;
+    color: $color-navy;
+    border: 2px solid rgba($color-navy, 0.25);
+  }
+
+  &--sm {
+    padding: 10px 24px;
+    min-width: 0;
+    gap: 2px;
+
+    .p-cta__btn-main {
+      font-size: 16px;
+    }
+
+    .p-cta__btn-sub {
+      font-size: 11px;
+    }
+  }
+
+  @include sp {
+    min-width: 0;
+    width: 100%;
+    padding: 16px 32px;
+  }
+}
+
+.p-cta__btn-sub {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
+.p-cta__btn-main {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}

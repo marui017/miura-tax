@@ -1,0 +1,85 @@
+@use "../../foundation/variable" as *;
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 15px;
+  font-family: $font-sans;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  white-space: nowrap;
+
+  &__arrow {
+    display: inline-flex;
+    font-size: 22px;
+    line-height: 1;
+    transition: transform 0.3s;
+  }
+
+  &:hover &__arrow {
+    transform: translateX(4px);
+  }
+
+  &--primary {
+    background: $color-orange;
+    color: $color-white;
+    border-color: $color-orange;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: $color-black;
+    border-color: $color-black;
+
+    &:hover {
+      background: $color-white;
+      border-color: $color-blue;
+      color: $color-blue;
+    }
+  }
+
+  &--white {
+    background: $color-white;
+    color: $color-orange;
+    border-color: $color-white;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--text {
+    padding: 0;
+    background: none;
+    color: $color-orange;
+    border: none;
+    font-size: 14px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--sm {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  &--lg {
+    padding: 20px 56px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+}

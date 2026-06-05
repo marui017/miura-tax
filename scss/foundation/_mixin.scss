@@ -1,0 +1,44 @@
+@use 'variable' as *;
+
+// レスポンシブ（スマホ）
+@mixin sp {
+  @media screen and (max-width: $bp-sp) {
+    @content;
+  }
+}
+
+// レスポンシブ（タブレット）
+@mixin tab {
+  @media screen and (max-width: $bp-tab) {
+    @content;
+  }
+}
+
+// フレックスボックス センタリング
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// フレックスボックス 両端揃え
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// セクション共通padding
+@mixin section-padding {
+  padding: $section-padding-pc 0;
+  @include sp {
+    padding: $section-padding-sp 0;
+  }
+}
+
+// インナー幅
+@mixin inner {
+  max-width: $inner-width;
+  margin: 0 auto;
+  padding: 0 $inner-padding;
+}

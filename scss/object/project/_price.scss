@@ -1,0 +1,354 @@
+@use "../../foundation/variable" as *;
+@use "../../foundation/mixin" as *;
+
+.p-price-plan {
+  padding: $section-padding-pc 0;
+
+  @include sp {
+    padding: $section-padding-sp 0;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+
+    @include tab {
+      grid-template-columns: 1fr;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  // ---- Card ----
+
+  &__card {
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+  }
+
+  &__card-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: $color-orange;
+    color: $color-white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    padding: 6px 20px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  &__card-head {
+    margin-bottom: 16px;
+  }
+
+  &__card-plan {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: $color-blue;
+    margin-bottom: 10px;
+  }
+
+  &__card-name {
+    font-family: $font-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: $color-navy;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  &__card-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: $color-black;
+    margin-bottom: 24px;
+  }
+
+  &__card-price {
+    margin-bottom: 24px;
+  }
+
+  &__card-period {
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: $color-navy;
+    margin-bottom: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      height: 8px;
+      background: rgba($color-blue, 0.25);
+      z-index: -1;
+    }
+  }
+
+  &__card-amount {
+    font-size: 44px;
+    font-weight: 700;
+    color: $color-navy;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+
+    .p-price-plan__card-currency {
+      font-size: 28px;
+      font-weight: 400;
+      margin-right: 5px;
+    }
+
+    .p-price-plan__card-tilde {
+      font-size: 28px;
+      font-weight: 400;
+    }
+  }
+
+  &__card-note {
+    font-size: 11px;
+    color: $color-black;
+  }
+
+  &__card-included {
+    flex: 1;
+    margin-bottom: 28px;
+    background: $color-gray-02;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    padding: 20px;
+
+    &-label {
+      position: relative;
+      isolation: isolate;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: $color-navy;
+      margin-bottom: 14px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1px;
+        height: 8px;
+        background: rgba($color-blue, 0.25);
+        z-index: -1;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: $color-black;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $color-blue;
+      }
+
+      &.is-optional {
+        color: $color-black;
+
+        &::before {
+          background: rgba($color-black, 0.3);
+        }
+      }
+    }
+  }
+
+  &__card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+
+    .p-cta__btn {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__card-link {
+    align-self: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-navy;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition:
+      color 0.2s,
+      text-decoration-color 0.2s;
+
+    &:hover {
+      color: $color-blue;
+      text-decoration-color: transparent;
+    }
+  }
+}
+
+// ============================================================
+// Scope of Service
+// ============================================================
+
+.p-price-scope {
+  padding: $section-padding-pc 0;
+  background: $color-gray-02;
+
+  @include sp {
+    padding: $section-padding-sp 0;
+  }
+
+  &__head {
+    position: relative;
+    margin-bottom: 56px;
+    overflow: hidden;
+
+    .c-section-head {
+      margin-bottom: 0;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @include sp {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background: $color-white;
+    border-radius: 4px;
+    padding: 36px;
+    border-top: 3px solid $color-blue;
+
+    &--extra {
+      border-top-color: $color-orange;
+
+      .p-price-scope__card-icon {
+        border-color: $color-orange;
+        color: $color-orange;
+      }
+
+      .p-price-scope__card-label {
+        color: $color-orange;
+      }
+
+      .p-price-scope__card-list li::before {
+        content: "—";
+        color: $color-orange;
+      }
+    }
+  }
+
+  &__card-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: $color-blue;
+    margin-bottom: 16px;
+  }
+
+  &__card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid $color-blue;
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  &__card-title {
+    font-family: $font-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: $color-navy;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+  }
+
+  &__card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        color: $color-blue;
+        font-size: 12px;
+      }
+    }
+
+    &-main {
+      font-size: 14px;
+      font-weight: 500;
+      color: $color-navy;
+      line-height: 1.5;
+      margin-bottom: 3px;
+    }
+
+    &-sub {
+      font-size: 12px;
+      color: $color-black;
+      line-height: 1.5;
+    }
+  }
+}
